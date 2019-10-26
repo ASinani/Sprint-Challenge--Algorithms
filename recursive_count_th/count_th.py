@@ -5,6 +5,14 @@ Your function must utilize recursion. It cannot contain any loops.
 '''
 def count_th(word):
     
-    # TBC
+    substring = 'th'
+    count = 0 
+
+    index = word.find(substring)
+    if index >= 0:
+        count += 1
+        word = word[index + len(substring):]
     
-    pass
+    #Increment the count by recursively calling count_th
+        count += count_th(word)
+    return count
